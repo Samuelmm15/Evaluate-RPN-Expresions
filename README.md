@@ -1,5 +1,5 @@
 # Evaluate-RPN-Expresions
-This is the fifth practice of the 'Algorithm and data structure' course.
+This is the fifth practice of the `Algorithm and data structure` course.
 
 Name: Samuel.\
 Surnames: Martín Morales.\
