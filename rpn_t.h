@@ -1,6 +1,6 @@
-// AUTOR: 
-// FECHA: 
-// EMAIL: 
+// AUTOR: Samuel Martín Morales
+// FECHA: 19/04/2019
+// EMAIL: alu0101359526@ull.edu.es
 // VERSION: 2.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 5
@@ -45,35 +45,69 @@ template<class T> const int rpn_t<T>::evaluate(queue_l_t<char>& q) {
 
     if (isdigit(c)) {
       int i = c - '0';
-      // poner código
+      stack_.push(i);
       std::cout << " (es un dígito) " << std::endl
 		<< "   Lo metemos en la pila..." << std::endl;
     } else {
       std::cout << " (es un operador)" << std::endl;
-      // poner código
+      operate_(c);
     }
   }
-  // poner código
+
+  int result = stack_.top();
+  stack_.pop();
+  return result;
 }
 
 template<class T> void rpn_t<T>::operate_(const char c) {
-  assert(c == '+' || c == '-' || c == '*' || c == '/');
+  assert(c == '+' || c == '-' || c == '*' || c == '/' || c == '^' || c == 'r' || c == 'l' || c == 'c');
 
-  // poner código
-  std::cout << "   Sacamos de la pila un operando: " << std::endl;
-  
-  // poner código
-  std::cout << "   Sacamos de la pila otro operando: " << std::endl;
-  
-  switch (c) {
-    case '+':
-      // poner código
-      break;
-    // poner código resto de operadores
+  int firstOperand, secondOperand;
+  if (c == 'r' || c == 'l' || c == 'c') {
+    firstOperand = stack_.top();
+    stack_.pop();
+    std::cout << "   Sacamos de la pila un operando: " << firstOperand << std::endl;
+  } else {
+    firstOperand = stack_.top();
+    stack_.pop();
+    std::cout << "   Sacamos de la pila un operando: " << firstOperand << std::endl;
+
+    secondOperand = stack_.top();
+    stack_.pop();
+    std::cout << "   Sacamos de la pila otro operando: " << secondOperand << std::endl;
   }
 
-  // poner código
-  std::cout << "   Metemos en la pila el resultado: " << std::endl;
+  int result;
+  switch (c) {
+    case '+':
+      result = secondOperand + firstOperand;
+      break;
+    case '-':
+      result = secondOperand - firstOperand;
+      break;
+    case '*':
+      result = secondOperand * firstOperand;
+      break;
+    case '/':
+      result = secondOperand / firstOperand;
+      break;
+    case '^':
+      result = pow(secondOperand, firstOperand);
+      break;
+    case 'r':
+      result = sqrt(firstOperand);
+      break;
+    case 'l':
+      result = log(firstOperand);
+      break;
+    case 'c':
+      result = pow(firstOperand, 2);
+      break;
+
+  }
+
+  stack_.push(result);
+  std::cout << "   Metemos en la pila el resultado: " << result << std::endl;
 }
 
  

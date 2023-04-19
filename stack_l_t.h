@@ -1,6 +1,6 @@
-// AUTOR: 
-// FECHA: 
-// EMAIL: 
+// AUTOR: Samuel Martín Morales
+// FECHA: 19/04/2019
+// EMAIL: alu0101359526@ull.edu.es
 // VERSION: 2.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // TEMA: 5
@@ -26,9 +26,13 @@ template<class T> class stack_l_t {
   ~stack_l_t(void) {}
 
   // operaciones
+  // Método que se encarga de introducir un elemento en la pila
   void push(const T&);
+  // Método que se encarga de eliminar el elemento que se encuentra en la cima de la pila
   void pop(void);
+  // Método que se encarga de devolver el elemento que se encuentra en la cima de la pila
   const T& top(void) const;
+  // Método que se encarga de comprobar si la pila está vacía
   bool empty(void) const;
 
   // E/S	

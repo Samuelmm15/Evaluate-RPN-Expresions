@@ -1,6 +1,6 @@
-// AUTOR: 
-// FECHA: 
-// EMAIL: 
+// AUTOR: Samuel Martín Morales
+// FECHA: 19/04/2019
+// EMAIL: alu0101359526@ull.edu.es
 // VERSION: 2.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // TEMA: 4
@@ -25,19 +25,28 @@ template <class T> class dll_t {
   ~dll_t(void); 
 
   // getters
+  // Método que se encarga de obtener la cola de la lista doblemente enlazada
   dll_node_t<T>* get_tail(void) const { return tail_; }
+  // Método que se encarga de obtener la cabeza de la lista doblemente enlazada
   dll_node_t<T>* get_head(void) const { return head_; }
+  // Método que se encarga de obtener el tamaño de la lista
   int get_size(void) const { return sz_; }
 
+  // Método que se encarga de comprobar si la lista está vacía
   bool empty(void) const;
 
   // operaciones
+  // Introducción de los elementos por la cola de la lista
   void push_back(dll_node_t<T>*);
+  // Introducción de los elementos por la cabeza de la lista
   void push_front(dll_node_t<T>*);
 
+  // Eliminación del elemento que se encuentra en la cola de la lista
   dll_node_t<T>* pop_back(void);
+  // Eliminación del elemento que se encuentra en la cabeza de la lista
   dll_node_t<T>* pop_front(void);
 
+  // Método que se encarga de eliminar un nodo de la lista
   dll_node_t<T>* erase(dll_node_t<T>*);
 
   // E/S

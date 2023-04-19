@@ -1,6 +1,6 @@
-// AUTOR: 
-// FECHA: 
-// EMAIL: 
+// AUTOR: Samuel Martín Morales
+// FECHA: 19/04/2019
+// EMAIL: alu0101359526@ull.edu.es
 // VERSION: 2.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 5
@@ -28,11 +28,17 @@ template <class T> class queue_l_t {
   ~queue_l_t(void) {}
 
   // operaciones
+  // Método que comprueba si la cola está vacía
   bool empty(void) const;
+  // Método que devuelve el tamaño de la cola
   int size(void) const;
+  // Método que introduce un elemento en la cola
   void push(const T& dato);
+  // Método que elimina el elemento que se encuentra en la cola
   void pop(void);
+  // Método que devuelve el elemento que se encuentra en el frente de la cola
   const T& front(void) const;
+  // Método que devuelve el elemento que se encuentra en el final de la cola
   const T& back(void) const;
 
   // E/S

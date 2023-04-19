@@ -1,6 +1,6 @@
-// AUTOR: 
-// FECHA: 
-// EMAIL: 
+// AUTOR: Samuel Martín Morales
+// FECHA: 19/04/2023
+// EMAIL: alu0101359526@ull.edu.es
 // VERSION: 2.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // TEMA: 4
@@ -23,13 +23,19 @@ template <class T> class dll_node_t {
   ~dll_node_t(void) {}
 
   // getters & setters
+  // Permite obtener el siguiente nodo del que nos encontramos actualmente
   dll_node_t<T>* get_next(void) const { return next_; }
+  // Permite establecer el siguiente nodo del que nos encontramos actualemente de la lista doblemente enlazada
   void set_next(dll_node_t<T>* next) { next_ = next; }
-  
+
+  // Permite obtener el nodo anterior del que nos encontramos actualmente
   dll_node_t<T>* get_prev(void) const { return prev_; }
+  // Permite establecer el nodo anterior del que nos encontramos actualemente de la lista doblemente enlazada
   void set_prev(dll_node_t<T>* prev) { prev_ = prev; }
-  
+
+  // Permite obtener el dato del nodo
   const T& get_data(void) const { return data_; }
+    // Permite establecer el dato del nodo
   void set_data(const T& data) { data_ = data; }
 
   // E/S
