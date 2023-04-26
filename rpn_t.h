@@ -45,9 +45,9 @@ template<class T> const int rpn_t<T>::evaluate(queue_l_t<char>& q) {
 
     if (isdigit(c)) {
       int i = c - '0';
+    std::cout << " (es un dígito) " << std::endl
+		  << "   Lo metemos en la pila..." << std::endl;
       stack_.push(i);
-      std::cout << " (es un dígito) " << std::endl
-		<< "   Lo metemos en la pila..." << std::endl;
     } else {
       std::cout << " (es un operador)" << std::endl;
       operate_(c);
